@@ -10,6 +10,8 @@ interface NavbarProps {
 const NavbarItem: FC<NavbarProps> = ({ children, text, color }) => {
   const { classes } = useStyles();
 
+  
+
   return (
     <UnstyledButton className={classes.navbarItem}>
       <Group>

@@ -1,10 +1,9 @@
-import { AppProps } from "next/app";
-import Head from "next/head";
-import { MantineProvider } from "@mantine/core";
-import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import { useState } from "react";
-import AppLayout from "../components/layouts/app.layout";
+import { AppProps } from 'next/app';
+import { MantineProvider } from '@mantine/core';
+import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { useState } from 'react';
+import AppLayout from '../components/layouts/AppLayout';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -19,9 +18,8 @@ export default function App(props: AppProps) {
           withGlobalStyles
           withNormalizeCSS
           theme={{
-            colorScheme: "dark",
-          }}
-        >
+            colorScheme: 'dark',
+          }}>
           <AppLayout>
             <Component {...pageProps} />
           </AppLayout>
@@ -29,7 +27,7 @@ export default function App(props: AppProps) {
       </Hydrate>
 
       {/* Uncomment this to enable devtools for live debugging */}
-      {/* <ReactQueryDevtools /> */}
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }
